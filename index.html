@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的报价计算器</title>
+</head>
+
+<body>
+    <h1>我的报价计算器</h1>
+
+    <p>产品成本：</p>
+    <input type="number" id="cost" placeholder="例如：100">
+
+    <p>利润率（%）：</p>
+    <input type="number" id="profit" placeholder="例如：10">
+
+    <br><br>
+
+    <button onclick="calculate()">计算报价</button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        function calculate() {
+            let cost = Number(document.getElementById("cost").value);
+            let profit = Number(document.getElementById("profit").value);
+
+            let price = cost * (1 + profit / 100);
+
+            document.getElementById("result").innerText =
+                "报价：" + price.toFixed(2) + " 元";
+        }
+    </script>
+</body>
+</html>
